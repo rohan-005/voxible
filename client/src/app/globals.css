@@ -1,26 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #c9682f;
+  --primary-dark: #a8480e;
+  --primary-soft: #f4e5db;
+
+  --secondary: #3d8361;
+  --tertiary: #b84a3e;
+
+  --neutral: #1c1c1a;
+
+  --background: #fffefa;
+  --surface: #ffffff;
+  --surface-muted: #f8f5f0;
+
+  --foreground: #1c1c1a;
+  --foreground-muted: rgba(28, 28, 26, 0.58);
+
+  --border: rgba(28, 28, 26, 0.12);
+  --border-strong: rgba(28, 28, 26, 0.2);
+
+  --grid-color: rgba(201, 104, 47, 0.08);
+
+  --font-main: var(--font-pixelify);
+  --font-heading: "Geist Pixel", monospace;
+  --font-brand: var(--font-jersey);
+}
+
+[data-theme="dark"] {
+  --primary: #c9682f;
+  --primary-dark: #e27b3e;
+  --primary-soft: rgba(201, 104, 47, 0.12);
+
+  --secondary: #3d8361;
+  --tertiary: #b84a3e;
+
+  --neutral: #1c1c1a;
+
+  --background: #101010;
+  --surface: #171716;
+  --surface-muted: #1c1c1a;
+
+  --foreground: #f5f3ee;
+  --foreground-muted: rgba(245, 243, 238, 0.46);
+
+  --border: rgba(245, 243, 238, 0.09);
+  --border-strong: rgba(245, 243, 238, 0.16);
+
+  --grid-color: rgba(201, 104, 47, 0.1);
 }
 
 @theme inline {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-soft: var(--primary-soft);
+
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground-muted: var(--foreground-muted);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-main), sans-serif;
+  font-weight: 400;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), monospace;
+  font-weight: 400;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.font-main {
+  font-family: var(--font-main), sans-serif;
+  font-weight: 400;
+}
+
+.font-heading {
+  font-family: var(--font-heading), monospace;
+  font-weight: 400;
+}
+
+.font-brand {
+  font-family: var(--font-brand), sans-serif;
+  font-weight: 400;
+}
+
+.pixel-grid {
+  background-image:
+    radial-gradient(
+      circle,
+      var(--grid-color) 1px,
+      transparent 1px
+    );
+
+  background-size: 18px 18px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
 }
