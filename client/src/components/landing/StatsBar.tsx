@@ -26,7 +26,7 @@ export default function StatsBar() {
                 {stat.label}
               </p>
 
-              <p className="mt-2 font-pixel text-sm font-bold text-neutral sm:text-base">
+              <p className="mt-2 font-pixel text-sm text-neutral sm:text-base">
                 {stat.value}
               </p>
             </div>

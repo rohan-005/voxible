@@ -72,10 +72,10 @@ export default function Navbar() {
     <header
       className={[
         "sticky top-0 z-50 w-full",
-        "border-b transition-all duration-300",
+        "border-b transition-all duration-300 ",
         isScrolled
           ? "border-border bg-background/95 shadow-[0_8px_30px_rgba(0,0,0,0.04)] backdrop-blur-xl"
-          : "border-border/70 bg-background/85 backdrop-blur-md",
+          : "border-border/70 bg-background/10 backdrop-blur-md",
       ].join(" ")}
     >
       {/* Top pixel accent */}
@@ -119,7 +119,7 @@ export default function Navbar() {
                     onClick={() => handleNavClick(link.href)}
                     className={[
                       "group relative flex h-9 items-center px-4",
-                      "font-main text-[11px]",
+                      "font-main text-[15px]",
                       "transition-colors duration-200",
                       isActive
                         ? "text-foreground"
@@ -182,7 +182,7 @@ export default function Navbar() {
           {/* Desktop Actions */}
           <div className="hidden shrink-0 items-center gap-2 md:flex">
             {/* System Status */}
-            <div className="mr-1 hidden items-center gap-2 border border-border bg-surface px-2.5 py-2 xl:flex">
+            {/* <div className="mr-1 hidden items-center gap-2 border border-border bg-surface px-2.5 py-2 xl:flex">
               <span className="relative flex size-2">
                 <span className="absolute inline-flex size-full animate-ping bg-secondary opacity-30" />
                 <span className="relative inline-flex size-2 bg-secondary" />
@@ -191,7 +191,7 @@ export default function Navbar() {
               <span className="font-main text-[9px] uppercase tracking-[0.12em] text-foreground-muted">
                 System Live
               </span>
-            </div>
+            </div> */}
 
             {/* Theme Toggle */}
             <button

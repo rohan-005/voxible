@@ -36,7 +36,7 @@ export default function PipelineSteps() {
 
                 <span
                   className={[
-                    "mt-1 font-pixel text-[10px] font-semibold uppercase tracking-wide",
+                    "mt-1 font-pixel text-[10px] uppercase tracking-wide",
                     step.active
                       ? "text-neutral"
                       : "text-neutral/35",
